@@ -5,6 +5,7 @@
     -o-transition: all .6s;
     -moz-transition: all .6s;
     -webkit-transition: all .6s;
+
     -ms-transition: all .6s;
     transition: all .6s;
     backface-visibility: hidden;
