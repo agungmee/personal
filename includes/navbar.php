@@ -1,145 +1,64 @@
-<html>
-<style>
-.navbar {
-    background: #444;
-    -o-transition: all .6s;
-    -moz-transition: all .6s;
-    -webkit-transition: all .6s;
+<!-- Code for NavBar -->
 
-    -ms-transition: all .6s;
-    transition: all .6s;
-    backface-visibility: hidden;
-}
- 
-.navbar.navbar-no-bg {
-    background: #444;
-    background: rgba(0, 0, 0, 0.2);
-}
- 
-.navbar-dark .navbar-nav {
-    font-size: 15px;
-    color: #fff;
-    text-transform: uppercase;
-}
- 
-.navbar-dark .navbar-nav .nav-link {
-    color: #fff;
-    color: rgba(255, 255, 255, 0.8);
-    border: 0;
-}
- 
-.navbar-dark .navbar-nav .nav-link:hover {
-    color: #fff;
-}
- 
-.navbar-dark .navbar-nav .nav-link:focus {
-    color: #fff;
-    outline: 0;
-}
- 
-.navbar-expand-md .navbar-nav .nav-link {
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
- 
-.navbar-brand {
-    width: 105px;
-    background: url(../img/logo.png) left center no-repeat;
-    border: 0;
-    text-indent: -99999px;
-}
-</style>
-
-<!-- Top menu -->
-<nav class="navbar navbar-dark fixed-top navbar-expand-md navbar-no-bg">
-    <div class="container">
-        <a class="navbar-brand" href="">Mee</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link scroll-link" href="#top-content">Top</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link scroll-link" href="#section-1">Item 1</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link scroll-link" href="#section-2">Item 2</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link scroll-link" href="#section-3">Item 3</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link scroll-link" href="#section-4">Item 4</a>
-                </li>
-            </ul>
-        </div>
+<div id="wrapper" class="animate">
+    <nav class="navbar header-top fixed-top navbar-expand-lg  navbar-dark bg-dark">
+      <!-- <span class="navbar-toggler-icon leftmenutrigger"></span> -->
+      <a class="navbar-brand" href="#">MEE</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav animate side-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Article
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul> -->
+        <ul class="navbar-nav ml-md-auto d-md-flex">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Blog
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
     </div>
 </nav>
 
 
+<style>
+        body{background:#f9f9f9;}
+        #wrapper{padding:90px 15px;}
+        .navbar-expand-lg .navbar-nav.side-nav{flex-direction: column;}
+        .card{margin-bottom: 15px; border-radius:0; box-shadow: 0 3px 5px rgba(0,0,0,.1); }
+        .header-top{box-shadow: 0 3px 5px rgba(0,0,0,.1)}
+        .leftmenutrigger{display: none}
+    @media(min-width:992px) {
+        .leftmenutrigger{display: block;display: block;margin: 7px 20px 4px 0;cursor: pointer;}
+        #wrapper{padding: 90px 15px 15px 15px; }
+        .navbar-nav.side-nav.open {left:0;}
+        .navbar-nav.side-nav{background: #585f66;box-shadow: 2px 1px 2px rgba(0,0,0,.1);position:fixed;top:56px;flex-direction: column!important;left:-220px;width:200px;overflow-y:auto;bottom:0;overflow-x:hidden;padding-bottom:40px}
+        }
+        .animate{-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;-o-transition:all .3s ease-in-out;-ms-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
+</style>
 <script>
-
-jQuery(document).ready(function() {
- 
- // ...
-
- // toggle "navbar-no-bg" class
- $('.top-content .text').waypoint(function() {
-     $('nav').toggleClass('navbar-no-bg');
- });
-
- // ...
-
-});
-
-function scroll_to(clicked_link, nav_height) {
-    var element_class = clicked_link.attr('href').replace('#', '.');
-    var scroll_to = 0;
-    if(element_class != '.top-content') {
-        element_class += '-container';
-        scroll_to = $(element_class).offset().top - nav_height;
-    }
-    if($(window).scrollTop() != scroll_to) {
-        $('html, body').stop().animate({scrollTop: scroll_to}, 1000);
-    }
-}
- 
-jQuery(document).ready(function() {
- 
-    /*
-        Navigation
-    */
-    $('a.scroll-link').on('click', function(e) {
-        e.preventDefault();
-        scroll_to($(this), $('nav').outerHeight());
+$( document ).ready(function() {
+     $('.leftmenutrigger').on('click', function(e) {
+     $('.side-nav').toggleClass("open");
+     e.preventDefault();
     });
- 
-    // ...
- 
 });
-
-@media (min-width: 768px) and (max-width: 991px) {
- 
- .navbar-expand-md .navbar-nav .nav-link { padding-left: 0.6rem; padding-right: 0.6rem; }
-
- /* ... */
-
-}
-
-@media (max-width: 767px) {
-
- .navbar.navbar-no-bg { background: #444; }
- .navbar-dark .navbar-toggler { border-color: #444; }
- .navbar-dark .navbar-toggler:focus { background: #333; outline: 0; }
- .navbar-expand-md .navbar-nav .nav-link { padding-top: 0.3rem; padding-bottom: 0.3rem; }
-
- /* ... */
-
-}
-
 </script>
-
-</html>

@@ -11,5 +11,8 @@
 </head>
 <body>
 	<?php include_once ('includes/navbar.php'); ?>
+
+	<?php include_once ('includes/news.php'); ?>
+
 </body>
 </html>
