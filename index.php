@@ -12,7 +12,7 @@
 <body>
 	<?php include_once ('includes/navbar.php'); ?>
 
-	<?php include_once ('includes/news.php'); ?>
+	<?php include_once ('includes/navbar.php'); ?>
 
 </body>
 </html>
